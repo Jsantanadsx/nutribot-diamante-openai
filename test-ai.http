@@ -1,0 +1,53 @@
+### GET de alimentos
+GET http://localhost:8080/foods?name=tapioca
+
+### Chat: nome
+POST http://localhost:8080/chat
+Content-Type: application/json
+
+{"conversationId":"mem-123","message":"Meu nome é Rafael."}
+
+### Memoria (mesmo ID)
+POST http://localhost:8080/chat
+Content-Type: application/json
+
+{"conversationId":"mem-123","message":"Qual é o meu nome?"}
+
+### Outra conversa (outro ID)
+POST http://localhost:8080/chat
+Content-Type: application/json
+
+{"conversationId":"mem-999","message":"Qual é o meu nome?"}
+
+### RAG sobre clinica
+POST http://localhost:8080/chat
+Content-Type: application/json
+
+{"conversationId":"rag-1","message":"Quantos copos de água por dia a clínica recomenda?"}
+
+### Tool: dados por 100 gramas
+POST http://localhost:8080/chat
+Content-Type: application/json
+
+{"conversationId":"food-1","message":"Quantas calorias tem 100 g de tapioca?"}
+
+### Tool: resumo do dia
+POST http://localhost:8080/chat
+Content-Type: application/json
+
+{"conversationId":"summary-1","message":"Quantas calorias ainda posso comer hoje?"}
+
+### Tool: registro no diario
+POST http://localhost:8080/chat
+Content-Type: application/json
+
+{"conversationId":"register-1","message":"Registre 100 gramas de tapioca no café da manhã."}
+
+### Verificar persistencia da refeicao
+GET http://localhost:8080/meals
+
+### Structured output (nao persiste)
+POST http://localhost:8080/meals/analyze
+Content-Type: application/json
+
+{"description":"arroz, feijão e um bife"}
